@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/services/services_locator.dart';
+import 'package:e_commerce_app/shop/presentation/components/icon_button_component.dart';
 import 'package:e_commerce_app/shop/presentation/components/product_component.dart';
 import 'package:e_commerce_app/shop/presentation/controller/products_bloc.dart';
 import 'package:flutter/material.dart';
@@ -22,10 +23,9 @@ class ProductsScreen extends StatelessWidget {
             ),
           ),
           actions: [
-            IconButton(onPressed: (){}, icon:const Icon( Icons.shopping_cart_outlined,
-            color: Colors.black,)),
-            IconButton(onPressed: (){}, icon:const Icon( Icons.apps,
-              color: Colors.black,)),
+
+            appBarCartButton(context),
+            appBarCategoryButton(context),
           ],
           elevation: 0,
         ),
@@ -37,13 +37,13 @@ class ProductsScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(20),
-
                   child: Row(
                     children: [
                       const Icon(
-
-                        Icons.star,color: Colors.amber,
-                      size: 30,),
+                        Icons.star,
+                        color: Colors.amber,
+                        size: 30,
+                      ),
                       const SizedBox(
                         width: 10,
                       ),

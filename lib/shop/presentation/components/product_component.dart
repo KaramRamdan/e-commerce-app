@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../screens/product_detail_screen.dart';
+import 'icon_button_component.dart';
 
 class ProductComponents extends StatelessWidget {
   const ProductComponents({Key? key}) : super(key: key);
@@ -134,19 +135,7 @@ class ProductComponents extends StatelessWidget {
                                   ],
                                 ),
                               ),
-                              IconButton(
-                                alignment: AlignmentDirectional.bottomEnd,
-                                onPressed: () {},
-                                icon: const CircleAvatar(
-                                  radius: 15.0,
-                                  backgroundColor: Colors.grey,
-                                  child: Icon(
-                                    Icons.shopping_cart_outlined,
-                                    size: 14.0,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
+                              addCartButton(context),
                             ],
                           ),
                         ),

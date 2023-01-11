@@ -8,6 +8,7 @@ import 'package:shimmer/shimmer.dart';
 import '../../../core/network/api_constance.dart';
 import '../../../core/services/services_locator.dart';
 import '../../../core/utils/app_string.dart';
+import '../components/icon_button_component.dart';
 import '../controller/product_details_bloc.dart';
 
 class ProductDetailScreen extends StatelessWidget {
@@ -145,7 +146,7 @@ class MovieDetailContent extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(4.0),
                                 ),
                                 child: Text(
-                                 "Price : ${state.productsDetails!.price}\$",
+                                 "${AppString.price} ${state.productsDetails!.price}\$",
                                   style: GoogleFonts.aldrich().copyWith(color: Colors.black,
                                   fontSize: 18),
                                 ),
@@ -228,20 +229,7 @@ class MovieDetailContent extends StatelessWidget {
                                         width: 180.0,
                                         fit: BoxFit.fill,
                                       ),
-                                      IconButton(
-                                        onPressed: () {
-
-                                        },
-                                        icon: CircleAvatar(
-                                          radius: 15,
-                                          backgroundColor: Colors.grey.withOpacity(.6),
-                                          child: const Icon(
-                                            Icons.shopping_cart_outlined,
-                                            color: Colors.black,
-                                            size:20,
-                                          ),
-                                        ),
-                                      ),
+                                      addCartButton(context),
                                     ],
                                   ),
                                 ),
@@ -250,7 +238,7 @@ class MovieDetailContent extends StatelessWidget {
                                   width: 100,
                                   color: Colors.black.withOpacity(.5),
                                   child: Text(
-                                    "Price :${category.price}\$",
+                                    "${AppString.price}${category.price}\$",
                                     textAlign: TextAlign.center,
                                     style: GoogleFonts.aldrich().copyWith(color: Colors.white,fontSize: 12),
                                     maxLines: 1,
@@ -280,12 +268,6 @@ class MovieDetailContent extends StatelessWidget {
       },
     );
   }
-  // Widget _showCategory() {
-  //   return BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
-  //     builder: (context, state) {
-  //       return ;
-  //     },
-  //   );
-  // }
+
 
 }

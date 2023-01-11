@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/services/services_locator.dart';
+import 'package:e_commerce_app/core/utils/app_string.dart';
 
 import 'package:e_commerce_app/shop/presentation/screens/products_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title:AppString.appTitle,
       theme: ThemeData(
       ),
       home:const ProductsScreen(),
