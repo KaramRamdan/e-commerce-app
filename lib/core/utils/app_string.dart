@@ -6,4 +6,5 @@ class AppString {
   static String payment = 'Payment';
   static String category = 'Category';
   static String appTitle= 'E-Commerce App';
+  static String shopApp= 'Shop App';
 }

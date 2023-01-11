@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/core/services/services_locator.dart';
+import 'package:e_commerce_app/core/utils/app_string.dart';
 import 'package:e_commerce_app/shop/presentation/components/icon_button_component.dart';
 import 'package:e_commerce_app/shop/presentation/components/product_component.dart';
 import 'package:e_commerce_app/shop/presentation/controller/products_bloc.dart';
@@ -18,7 +19,7 @@ class ProductsScreen extends StatelessWidget {
           backgroundColor: Colors.grey[300],
           title: Center(
             child: Text(
-              'Shop App',
+              AppString.shopApp,
               style: GoogleFonts.aldrich().copyWith(color: Colors.black),
             ),
           ),

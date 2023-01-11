@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/core/utils/app_string.dart';
-import 'package:e_commerce_app/shop/presentation/screens/products_screen.dart';
+import 'package:e_commerce_app/shop/presentation/components/icon_button_component.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -18,18 +19,7 @@ class CategoryScreen extends StatelessWidget {
           ),
         ),
         actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) => const ProductsScreen(),
-                    ));
-              },
-              icon: const Icon(
-                Icons.home,
-                color: Colors.black,
-              )),
+          appBarHomeButton(context),
         ],
         elevation: 0,
       ),
