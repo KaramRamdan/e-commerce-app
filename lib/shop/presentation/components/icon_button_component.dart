@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../screens/cart_screen.dart';
-import '../screens/category_screen.dart';
+
 import '../screens/products_screen.dart';
 
 Widget appBarCartButton(context) {
@@ -34,20 +34,7 @@ Widget appBarHomeButton(context) {
       ));
 }
 
-Widget appBarCategoryButton(context) {
-  return IconButton(
-      onPressed: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (BuildContext context) => const CategoryScreen(),
-            ));
-      },
-      icon: const Icon(
-        Icons.apps_sharp,
-        color: Colors.black,
-      ));
-}
+
 
 Widget addCartButton(context) {
   return  IconButton(

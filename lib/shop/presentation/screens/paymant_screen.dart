@@ -15,7 +15,7 @@ class PaymentScreen extends StatelessWidget {
         actions: [
           appBarHomeButton(context),
           appBarCartButton(context),
-          appBarCategoryButton(context),
+
         ],
         elevation: 0,
       ),

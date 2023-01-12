@@ -23,7 +23,7 @@ class CartScreen extends StatelessWidget {
         ),
         actions: [
           appBarHomeButton(context),
-          appBarCategoryButton(context),
+
         ],
         elevation: 0,
       ),

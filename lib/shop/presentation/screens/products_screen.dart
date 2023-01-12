@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../components/category_component.dart';
+
 class ProductsScreen extends StatelessWidget {
   const ProductsScreen({Key? key}) : super(key: key);
 
@@ -24,9 +26,7 @@ class ProductsScreen extends StatelessWidget {
             ),
           ),
           actions: [
-
             appBarCartButton(context),
-            appBarCategoryButton(context),
           ],
           elevation: 0,
         ),
@@ -37,7 +37,30 @@ class ProductsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.only(left: 30,top: 30,),
+                  child: Row(
+                    children: [
+                      const Icon(
+                        Icons.apps,
+                        color: Colors.amber,
+                        size: 30,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        AppString.category,
+                        style: GoogleFonts.aldrich().copyWith(
+                          color: Colors.black,
+                          fontSize: 22,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                categoryComponent(context),
+                Padding(
+                  padding: const EdgeInsets.only(left: 30,bottom: 30,),
                   child: Row(
                     children: [
                       const Icon(
@@ -49,7 +72,7 @@ class ProductsScreen extends StatelessWidget {
                         width: 10,
                       ),
                       Text(
-                        'Best Seller :',
+                        AppString.bestSeller,
                         style: GoogleFonts.aldrich().copyWith(
                           color: Colors.black,
                           fontSize: 22,
