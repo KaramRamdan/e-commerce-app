@@ -1,5 +1,3 @@
-
-
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,14 +13,15 @@ part 'product_details_state.dart';
 
 class ProductDetailsBloc
     extends Bloc<ProductDetailsEvent, ProductDetailsState> {
-  ProductDetailsBloc(this.getProductsDetailsUseCase, this.getCategoryProductsUseCase)
+  ProductDetailsBloc(
+      this.getProductsDetailsUseCase, this.getCategoryProductsUseCase)
       : super(const ProductDetailsState()) {
-    on<GetProductDetailsEvent>(_getProductDetails);
+    on<GetProductDetailsEvent>(_getProductDetailsUseCase);
     on<GetCategoryEvent>(_getCategoryUseCase);
   }
   final GetCategoryProductsUseCase getCategoryProductsUseCase;
   final GetProductsDetailsUseCase getProductsDetailsUseCase;
-  FutureOr<void> _getProductDetails(
+  FutureOr<void> _getProductDetailsUseCase(
       GetProductDetailsEvent event, Emitter<ProductDetailsState> emit) async {
     final result = await getProductsDetailsUseCase(
         ProductsDetailsParameters(productsId: event.id));
@@ -31,10 +30,11 @@ class ProductDetailsBloc
       productsDetailsState: RequestState.loaded,
     ));
   }
+
   FutureOr<void> _getCategoryUseCase(
-      GetCategoryEvent event, Emitter<ProductDetailsState> emit) async{
+      GetCategoryEvent event, Emitter<ProductDetailsState> emit) async {
     final result = await getCategoryProductsUseCase(
-        CategoryProductsParameters( categoryName: event.categoryName));
+        CategoryProductsParameters(categoryName: event.categoryName));
     emit(state.copyWith(
       category: result,
       categoryState: RequestState.loaded,

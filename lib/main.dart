@@ -18,6 +18,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title:AppString.appTitle,
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.grey[300],
+            appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(
+            color: Colors.black
+          )
+      )
       ),
       home:const ProductsScreen(),
     );

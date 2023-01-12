@@ -44,12 +44,12 @@ class ProductComponents extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (BuildContext context) =>
                                   ProductDetailScreen(
-                                id: product.id,
-                                categoryName: product.category,
-                              ),
+                                    id: product.id,
+                                    categoryName: product.category,
+                                  ),
                             ));
 
-                        /// TODO
+
                       },
                       child: Column(
                         children: [
@@ -66,23 +66,23 @@ class ProductComponents extends StatelessWidget {
                                   height: 170.0,
                                   fit: BoxFit.fill,
                                   imageUrl:
-                                      ApiConstance.imageUrl(product.image),
+                                  ApiConstance.imageUrl(product.image),
                                   placeholder: (context, url) =>
                                       Shimmer.fromColors(
-                                    baseColor: Colors.grey[850]!,
-                                    highlightColor: Colors.grey[800]!,
-                                    child: Container(
-                                      height: 170.0,
-                                      width: 180.0,
-                                      decoration: BoxDecoration(
-                                        color: Colors.black,
-                                        borderRadius:
+                                        baseColor: Colors.grey[850]!,
+                                        highlightColor: Colors.grey[800]!,
+                                        child: Container(
+                                          height: 170.0,
+                                          width: 180.0,
+                                          decoration: BoxDecoration(
+                                            color: Colors.black,
+                                            borderRadius:
                                             BorderRadius.circular(8.0),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
                                   errorWidget: (context, url, error) =>
-                                      const Icon(Icons.error),
+                                  const Icon(Icons.error),
                                 ),
                               ),
                               Container(
@@ -91,7 +91,7 @@ class ProductComponents extends StatelessWidget {
                                 color: Colors.black.withOpacity(.5),
                                 child: Padding(
                                   padding:
-                                      const EdgeInsets.symmetric(vertical: 5),
+                                  const EdgeInsets.symmetric(vertical: 5),
                                   child: Text(
                                     ' Price: ${product.price} \$',
                                     textAlign: TextAlign.center,

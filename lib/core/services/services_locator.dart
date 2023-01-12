@@ -10,6 +10,7 @@ import 'package:get_it/get_it.dart';
 
 
 
+
 final sl = GetIt.instance;
 
 class ServicesLocator {
@@ -19,6 +20,7 @@ class ServicesLocator {
     sl.registerFactory(() => ProductsBloc(
           sl(),
         ));
+
     sl.registerFactory(() => ProductDetailsBloc(
           sl(),sl()
         ));
