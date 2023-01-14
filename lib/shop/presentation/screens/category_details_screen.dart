@@ -13,18 +13,21 @@ import '../../../core/services/services_locator.dart';
 import '../components/icon_button_component.dart';
 import '../controller/product_details_bloc.dart';
 
-
 class CategoryDetailsScreen extends StatelessWidget {
-  const CategoryDetailsScreen({Key? key, required this.categoryName, }) : super(key: key);
+  const CategoryDetailsScreen({
+    Key? key,
+    required this.categoryName,
+  }) : super(key: key);
   final String categoryName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context)=>sl<ProductDetailsBloc>()..add( GetCategoryEvent(categoryName)),
-      child: BlocBuilder<ProductDetailsBloc,ProductDetailsState>(
-        builder:(context,state){
-          return  Scaffold(
+      create: (context) =>
+          sl<ProductDetailsBloc>()..add(GetCategoryEvent(categoryName)),
+      child: BlocBuilder<ProductDetailsBloc, ProductDetailsState>(
+        builder: (context, state) {
+          return Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.grey[300],
               title: Center(
@@ -34,18 +37,17 @@ class CategoryDetailsScreen extends StatelessWidget {
                 ),
               ),
               actions: [
-                appBarHomeButton(context) ,
+                appBarHomeButton(context),
                 appBarCartButton(context),
               ],
               elevation: 0,
             ),
-            body:  SingleChildScrollView(
+            body: SingleChildScrollView(
               child: Container(
                 color: Colors.grey[300],
                 alignment: AlignmentDirectional.center,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-
                   children: [
                     FadeIn(
                       duration: const Duration(milliseconds: 750),
@@ -68,17 +70,16 @@ class CategoryDetailsScreen extends StatelessWidget {
                                       MaterialPageRoute(
                                         builder: (BuildContext context) =>
                                             ProductDetailScreen(
-                                              id: category.id,
-                                              categoryName: category.category,
-                                            ),
+                                          id: category.id,
+                                          categoryName: category.category,
+                                        ),
                                       ));
-
-
                                 },
                                 child: Column(
                                   children: [
                                     Stack(
-                                      alignment: AlignmentDirectional.bottomCenter,
+                                      alignment:
+                                          AlignmentDirectional.bottomCenter,
                                       children: [
                                         ClipRRect(
                                           borderRadius: const BorderRadius.only(
@@ -89,24 +90,26 @@ class CategoryDetailsScreen extends StatelessWidget {
                                             width: 180.0,
                                             height: 170.0,
                                             fit: BoxFit.fill,
-                                            imageUrl:
-                                            ApiConstance.imageUrl(category.image),
+                                            imageUrl: ApiConstance.imageUrl(
+                                                category.image),
                                             placeholder: (context, url) =>
                                                 Shimmer.fromColors(
-                                                  baseColor: Colors.grey[850]!,
-                                                  highlightColor: Colors.grey[800]!,
-                                                  child: Container(
-                                                    height: 170.0,
-                                                    width: 180.0,
-                                                    decoration: BoxDecoration(
-                                                      color: Colors.black,
-                                                      borderRadius:
-                                                      BorderRadius.circular(8.0),
-                                                    ),
-                                                  ),
+                                              baseColor: Colors.grey[850]!,
+                                              highlightColor: Colors.grey[800]!,
+                                              child: Container(
+                                                height: 170.0,
+                                                width: 180.0,
+                                                decoration: BoxDecoration(
+                                                  color: Colors.black,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
                                                 ),
-                                            errorWidget: (context, url, error) =>
-                                            const Icon(Icons.error),
+                                              ),
+                                            ),
+                                            errorWidget:
+                                                (context, url, error) =>
+                                                    const Icon(Icons.error),
                                           ),
                                         ),
                                         Container(
@@ -114,13 +117,15 @@ class CategoryDetailsScreen extends StatelessWidget {
                                           width: 100,
                                           color: Colors.black.withOpacity(.5),
                                           child: Padding(
-                                            padding:
-                                            const EdgeInsets.symmetric(vertical: 5),
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 5),
                                             child: Text(
                                               ' Price: ${category.price} \$',
                                               textAlign: TextAlign.center,
-                                              style: GoogleFonts.aldrich().copyWith(
-                                                  color: Colors.white, fontSize: 12),
+                                              style: GoogleFonts.aldrich()
+                                                  .copyWith(
+                                                      color: Colors.white,
+                                                      fontSize: 12),
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
                                             ),
@@ -132,7 +137,8 @@ class CategoryDetailsScreen extends StatelessWidget {
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 8),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
                                 child: ClipRRect(
                                   borderRadius: const BorderRadius.only(
                                       bottomLeft: Radius.circular(8.0),
@@ -145,13 +151,15 @@ class CategoryDetailsScreen extends StatelessWidget {
                                           height: 30,
                                           width: 130,
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 category.title,
                                                 maxLines: 2,
                                                 overflow: TextOverflow.ellipsis,
-                                                style: GoogleFonts.aldrich().copyWith(
+                                                style: GoogleFonts.aldrich()
+                                                    .copyWith(
                                                   color: Colors.black,
                                                   fontSize: 12,
                                                 ),
@@ -175,8 +183,7 @@ class CategoryDetailsScreen extends StatelessWidget {
               ),
             ),
           );
-        } ,
-     
+        },
       ),
     );
   }

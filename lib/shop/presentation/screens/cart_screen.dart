@@ -1,8 +1,10 @@
 import 'package:e_commerce_app/core/utils/app_string.dart';
+import 'package:e_commerce_app/shop/presentation/screens/paymant_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../components/cart_component.dart';
 import '../components/icon_button_component.dart';
 
 class CartScreen extends StatelessWidget {
@@ -28,9 +30,16 @@ class CartScreen extends StatelessWidget {
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: const Icon(Icons.payment_outlined),
+        backgroundColor: Colors.grey[500],
+        onPressed: () { Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => const PaymentScreen(),
+            ));},
+        child: const Icon(Icons.payment_outlined,
+        color: Colors.white,),
       ),
+      body: cartComponent(context),
     );
   }
 }

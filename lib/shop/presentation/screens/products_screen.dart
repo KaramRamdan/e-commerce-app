@@ -6,7 +6,6 @@ import 'package:e_commerce_app/shop/presentation/controller/products_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../components/category_component.dart';
 
 class ProductsScreen extends StatelessWidget {
@@ -37,7 +36,10 @@ class ProductsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 30,top: 30,),
+                  padding: const EdgeInsets.only(
+                    left: 30,
+                    top: 30,
+                  ),
                   child: Row(
                     children: [
                       const Icon(
@@ -60,7 +62,10 @@ class ProductsScreen extends StatelessWidget {
                 ),
                 categoryComponent(context),
                 Padding(
-                  padding: const EdgeInsets.only(left: 30,bottom: 30,),
+                  padding: const EdgeInsets.only(
+                    left: 30,
+                    bottom: 30,
+                  ),
                   child: Row(
                     children: [
                       const Icon(
